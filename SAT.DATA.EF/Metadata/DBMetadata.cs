@@ -134,11 +134,44 @@ namespace SAT.DATA.EF
         public string Location { get; set; }
 
         //public int SCSID { get; set; }
-    } 
+    }
     #endregion
 
-    public class EnrollmentsMetaData
-    {
+    #region StudentStatusesMetadata
+
+    public class StudentStatusesMetadata
+    { 
+
+
+    //public int SSID { get; set; }
+
+    [Required(ErrorMessage = "*")]
+    [Display(Name = "Status")]
+    [StringLength(30, ErrorMessage ="*Value must be 30 characters or less.")]
+    public string SSName { get; set; }
+
+    [Display(Name ="Status Description")]
+    [StringLength(250, ErrorMessage ="*Value must be 250 characters or less.")]
+    public string SSDescription { get; set; }
 
     }
+    #endregion
+
+    #region EnrollmentsMetadata
+
+    //public class EnrollmentsMetaData
+    //{
+    //    //public int EnrollmentId { get; set; }
+
+
+    //    //public int StudentId { get; set; }
+
+
+    //    //public int ScheduledClassId { get; set; }
+
+
+    //    public System.DateTime EnrollmentDate { get; set; }
+
+    //} 
+    #endregion
 }
