@@ -85,28 +85,26 @@
     <Compile Include="StudentStatuses.cs">
       <DependentUpon>SATModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>SATModel.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <EntityDeploy Include="SATModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SATModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.Config" />
     <None Include="packages.config" />
+    <EntityDeploy Include="SATModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SATModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
     <None Include="SATModel.edmx.diagram">
       <DependentUpon>SATModel.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="SATModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SATModel.Context.cs</LastGenOutput>
       <DependentUpon>SATModel.edmx</DependentUpon>
+      <LastGenOutput>SATModel.Context.cs</LastGenOutput>
     </Content>
     <Content Include="SATModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -114,9 +112,5 @@
       <LastGenOutput>SATModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

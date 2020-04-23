@@ -4,14 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="22582eb339be49bea53af47a45688014" Name="Diagram1">
-        <EntityTypeShape EntityType="SATModel.Courses" Width="1.875" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.Enrollments" Width="1.5" PointX="7.125" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.ScheduledClasses" Width="2.5" PointX="3.5" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.ScheduledClassStatuses" Width="3.375" PointX="0.75" PointY="5.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.Students" Width="1.5" PointX="4.625" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.StudentStatuses" Width="1.75" PointX="1.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.sysdiagram" Width="1.5" PointX="9.125" PointY="5.75" IsExpanded="true" />
+      <Diagram DiagramId="e00f72cb9d114135b44101be95c0eb3c" Name="Diagram1">
+        <EntityTypeShape EntityType="SATModel.Courses" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATModel.Enrollments" Width="1.5" PointX="5.25" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATModel.ScheduledClasses" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATModel.ScheduledClassStatuses" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATModel.Students" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATModel.StudentStatuses" Width="1.5" PointX="0.75" PointY="9.875" IsExpanded="true" />
         <AssociationConnector Association="SATModel.FK_ScheduledClasses_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="SATModel.FK_Enrollments_ScheduledClasses" ManuallyRouted="false" />
         <AssociationConnector Association="SATModel.FK_Enrollments_Students" ManuallyRouted="false" />

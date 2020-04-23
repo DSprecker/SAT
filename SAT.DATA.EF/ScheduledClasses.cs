@@ -19,13 +19,9 @@ namespace SAT.DATA.EF
         {
             this.Enrollments = new HashSet<Enrollments>();
         }
-
+    
         public int ScheduledClassId { get; set; }
-
-
         public int CourseId { get; set; }
-
-
         public System.DateTime StartDate { get; set; }
         public System.DateTime EndDate { get; set; }
         public string InstructorName { get; set; }

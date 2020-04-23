@@ -23,7 +23,7 @@ namespace SAT.DATA.EF
         public int CourseId { get; set; }
         public string CourseName { get; set; }
         public string CourseDescription { get; set; }
-        public byte Credithours { get; set; }
+        public byte CreditHours { get; set; }
         public string Curriculum { get; set; }
         public string Notes { get; set; }
         public bool IsActive { get; set; }

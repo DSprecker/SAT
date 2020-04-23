@@ -4,10 +4,10 @@
     <Key>
       <PropertyRef Name="CourseId" />
     </Key>
-    <Property Name="CourseId" Type="int" Nullable="false" />
+    <Property Name="CourseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CourseName" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="CourseDescription" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Credithours" Type="tinyint" Nullable="false" />
+    <Property Name="CreditHours" Type="tinyint" Nullable="false" />
     <Property Name="Curriculum" Type="nvarchar" MaxLength="250" />
     <Property Name="Notes" Type="nvarchar" MaxLength="500" />
     <Property Name="IsActive" Type="bit" Nullable="false" />
@@ -16,7 +16,7 @@
     <Key>
       <PropertyRef Name="EnrollmentId" />
     </Key>
-    <Property Name="EnrollmentId" Type="int" Nullable="false" />
+    <Property Name="EnrollmentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StudentId" Type="int" Nullable="false" />
     <Property Name="ScheduledClassId" Type="int" Nullable="false" />
     <Property Name="EnrollmentDate" Type="date" Nullable="false" />
@@ -25,7 +25,7 @@
     <Key>
       <PropertyRef Name="ScheduledClassId" />
     </Key>
-    <Property Name="ScheduledClassId" Type="int" Nullable="false" />
+    <Property Name="ScheduledClassId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CourseId" Type="int" Nullable="false" />
     <Property Name="StartDate" Type="date" Nullable="false" />
     <Property Name="EndDate" Type="date" Nullable="false" />
@@ -37,14 +37,14 @@
     <Key>
       <PropertyRef Name="SCSID" />
     </Key>
-    <Property Name="SCSID" Type="int" Nullable="false" />
+    <Property Name="SCSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SCSName" Type="varchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="Students">
     <Key>
       <PropertyRef Name="StudentId" />
     </Key>
-    <Property Name="StudentId" Type="int" Nullable="false" />
+    <Property Name="StudentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="LastName" Type="nvarchar" MaxLength="20" Nullable="false" />
     <Property Name="Major" Type="nvarchar" MaxLength="15" />
@@ -61,19 +61,9 @@
     <Key>
       <PropertyRef Name="SSID" />
     </Key>
-    <Property Name="SSID" Type="int" Nullable="false" />
+    <Property Name="SSID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="SSName" Type="nvarchar" MaxLength="30" Nullable="false" />
     <Property Name="SSDescription" Type="nvarchar" MaxLength="250" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <Association Name="FK_Enrollments_ScheduledClasses">
     <End Role="ScheduledClasses" Type="Self.ScheduledClasses" Multiplicity="1" />
@@ -142,7 +132,6 @@
     <EntitySet Name="ScheduledClassStatuses" EntityType="Self.ScheduledClassStatuses" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Students" EntityType="Self.Students" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StudentStatuses" EntityType="Self.StudentStatuses" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Enrollments_ScheduledClasses" Association="Self.FK_Enrollments_ScheduledClasses">
       <End Role="ScheduledClasses" EntitySet="ScheduledClasses" />
       <End Role="Enrollments" EntitySet="Enrollments" />

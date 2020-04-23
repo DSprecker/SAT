@@ -4,10 +4,10 @@
     <Key>
       <PropertyRef Name="CourseId" />
     </Key>
-    <Property Name="CourseId" Type="Int32" Nullable="false" />
+    <Property Name="CourseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CourseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="CourseDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="Credithours" Type="Byte" Nullable="false" />
+    <Property Name="CreditHours" Type="Byte" Nullable="false" />
     <Property Name="Curriculum" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <Property Name="Notes" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" Nullable="false" />
@@ -17,7 +17,7 @@
     <Key>
       <PropertyRef Name="EnrollmentId" />
     </Key>
-    <Property Name="EnrollmentId" Type="Int32" Nullable="false" />
+    <Property Name="EnrollmentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="StudentId" Type="Int32" Nullable="false" />
     <Property Name="ScheduledClassId" Type="Int32" Nullable="false" />
     <Property Name="EnrollmentDate" Type="DateTime" Nullable="false" Precision="0" />
@@ -28,7 +28,7 @@
     <Key>
       <PropertyRef Name="ScheduledClassId" />
     </Key>
-    <Property Name="ScheduledClassId" Type="Int32" Nullable="false" />
+    <Property Name="ScheduledClassId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="CourseId" Type="Int32" Nullable="false" />
     <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="0" />
     <Property Name="EndDate" Type="DateTime" Nullable="false" Precision="0" />
@@ -43,7 +43,7 @@
     <Key>
       <PropertyRef Name="SCSID" />
     </Key>
-    <Property Name="SCSID" Type="Int32" Nullable="false" />
+    <Property Name="SCSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SCSName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <NavigationProperty Name="ScheduledClasses" Relationship="Self.FK_ScheduledClasses_ScheduledClassStatuses" FromRole="ScheduledClassStatuses" ToRole="ScheduledClasses" />
   </EntityType>
@@ -51,7 +51,7 @@
     <Key>
       <PropertyRef Name="StudentId" />
     </Key>
-    <Property Name="StudentId" Type="Int32" Nullable="false" />
+    <Property Name="StudentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Major" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
@@ -70,20 +70,10 @@
     <Key>
       <PropertyRef Name="SSID" />
     </Key>
-    <Property Name="SSID" Type="Int32" Nullable="false" />
+    <Property Name="SSID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="SSName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="SSDescription" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Students" Relationship="Self.FK_Students_StudentStatuses" FromRole="StudentStatuses" ToRole="Students" />
-  </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <Association Name="FK_ScheduledClasses_Courses">
     <End Role="Courses" Type="SATModel.Courses" Multiplicity="1" />
@@ -152,7 +142,6 @@
     <EntitySet Name="ScheduledClassStatuses" EntityType="SATModel.ScheduledClassStatuses" />
     <EntitySet Name="Students1" EntityType="SATModel.Students" />
     <EntitySet Name="StudentStatuses" EntityType="SATModel.StudentStatuses" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <AssociationSet Name="FK_ScheduledClasses_Courses" Association="Self.FK_ScheduledClasses_Courses">
       <End Role="Courses" EntitySet="Courses" />
       <End Role="ScheduledClasses" EntitySet="ScheduledClasses1" />
