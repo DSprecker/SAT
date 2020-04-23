@@ -1,8 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SAT.UI"
+    "\\SAT.UI",
+    "\\SAT.UI\\Content",
+    "\\SAT.UI\\Controllers",
+    "\\SAT.UI\\Views"
   ],
-  "SelectedNode": "\\SAT.UI\\Web.config",
+  "SelectedNode": "\\SAT.UI\\Controllers",
   "PreviewInSolutionExplorer": false
 }
