@@ -11,7 +11,7 @@
         <EntityTypeShape EntityType="SATModel.ScheduledClassStatuses" Width="3.375" PointX="0.75" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SATModel.Students" Width="1.5" PointX="4.625" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SATModel.StudentStatuses" Width="1.75" PointX="1.25" PointY="7.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SATModel.sysdiagram" Width="1.5" PointX="6.875" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SATModel.sysdiagram" Width="1.5" PointX="9.125" PointY="5.75" IsExpanded="true" />
         <AssociationConnector Association="SATModel.FK_ScheduledClasses_Courses" ManuallyRouted="false" />
         <AssociationConnector Association="SATModel.FK_Enrollments_ScheduledClasses" ManuallyRouted="false" />
         <AssociationConnector Association="SATModel.FK_Enrollments_Students" ManuallyRouted="false" />

@@ -26,5 +26,22 @@ namespace SAT.UI.Controllers
 
             return View();
         }
+        [HttpGet]
+        public ActionResult Students()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Enrollments()
+        {
+            return View();
+        }
+        [HttpGet]
+        public ActionResult Courses()
+        {
+            return View();
+        }
+          
+    
     }
 }
