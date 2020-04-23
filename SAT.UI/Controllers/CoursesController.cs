@@ -46,7 +46,7 @@ namespace SAT.UI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "CourseId,CourseName,CourseDescription,Credithours,Curriculum,Notes,IsActive")] Courses courses)
+        public ActionResult Create([Bind(Include = "CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Courses courses)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace SAT.UI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "CourseId,CourseName,CourseDescription,Credithours,Curriculum,Notes,IsActive")] Courses courses)
+        public ActionResult Edit([Bind(Include = "CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Courses courses)
         {
             if (ModelState.IsValid)
             {

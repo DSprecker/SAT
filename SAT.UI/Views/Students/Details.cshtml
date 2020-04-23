@@ -1,104 +1,122 @@
 ﻿@model SAT.DATA.EF.Students
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Student Details";
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
-<div>
-    <h4>Students</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </dt>
+<div id="studentDetails">
+    <div class="dl-horizontal" id="sHeader">
 
-        <dd>
-            @Html.DisplayFor(model => model.FirstName)
-        </dd>
+        <h2>
+            @Html.DisplayFor(model => model.FullName)
+        </h2>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
+        <div id="sdLeft">
+            <p>
+                @Html.DisplayNameFor(model => model.Major)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Address)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.City)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.State)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.ZipCode)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Phone)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.Email)
+            </p>
+            <p>
+                @Html.DisplayNameFor(model => model.StudentStatus.SSName)
+            </p>
+        </div>
 
-        <dd>
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Major)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Major)
-        </dd>
+        <div id="sdRight">
+            <p>
+                @Html.DisplayFor(model => model.Major)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Address)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.City)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.State)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.ZipCode)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Phone)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.Email)
+            </p>
+            <p>
+                @Html.DisplayFor(model => model.StudentStatus.SSName)
+            </p>
+        </div>
+        <div class="clearfix"></div>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Address)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.City)
-        </dt>
+        @*@Html.DisplayFor(model => model.Major)
 
-        <dd>
-            @Html.DisplayFor(model => model.City)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.State)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.State)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ZipCode)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ZipCode)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Phone)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Phone)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
+        @Html.DisplayFor(model => model.Address)
 
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
 
-        <dt>
+
+        @Html.DisplayFor(model => model.City)
+
+
+
+        @Html.DisplayFor(model => model.State)
+
+
+
+        @Html.DisplayFor(model => model.ZipCode)
+
+
+
+        @Html.DisplayFor(model => model.Phone)
+
+
+
+        @Html.DisplayFor(model => model.Email)
+
+
+
+        @Html.DisplayFor(model => model.StudentStatus.SSName)*@
+
+
+
+        @*<dt>
             @Html.DisplayNameFor(model => model.PhotoUrl)
-        </dt>
+        </dt>*@
 
-        <dd>
+        @*<dd>
             @Html.DisplayFor(model => model.PhotoUrl)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.StudentStatus.SSName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.StudentStatus.SSName)
-        </dd>
-
-    </dl>
+        </dd>*@
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |

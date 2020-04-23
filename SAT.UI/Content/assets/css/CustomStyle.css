@@ -1,0 +1,38 @@
+﻿#studentDetails {
+    color: black;
+    width: 50%;
+    margin: auto;
+    border: solid 5px #535BA0;
+    padding: 1em;
+    border-radius: .5em;
+}
+
+#sHeader {
+    text-align: center;
+}
+
+#sdLeft {
+    float: left;
+    width: 49%;
+    font-weight: 700;
+    text-align: right;
+}
+
+#sdRight {
+    margin-left: 51%;
+}
+
+    #sdLeft p, #sdRight p {
+        line-height: 2.25em;
+    }
+
+#adFooterLeft {
+    float: left;
+    width: 49%;
+}
+
+
+#adFooterRight {
+    margin-left: 51%;
+    text-align: right;
+}

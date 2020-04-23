@@ -16,8 +16,8 @@ namespace SAT.DATA.EF
 
 
 
-        [Required(ErrorMessage ="*")]
-        [Display(Name ="First Name")]
+        [Required(ErrorMessage = "*")]
+        [Display(Name = "First Name")]
         [StringLength(20, ErrorMessage = "Value must be 20 characters or less.")]
         public string FirstName { get; set; }
 
@@ -52,7 +52,7 @@ namespace SAT.DATA.EF
         [StringLength(13, ErrorMessage = "Value must be 13 characters or less.")]
         public string Phone { get; set; }
 
-        [Required(ErrorMessage= "*Must provide a valid email address")]
+        [Required(ErrorMessage = "*Must provide a valid email address")]
         [Display(Name = "Email Address")]
         [StringLength(60, ErrorMessage = "Value must be 60 characters or less.")]
         public string Email { get; set; }
@@ -60,8 +60,8 @@ namespace SAT.DATA.EF
         [Display(Name = "Photo URL")]
         public string PhotoUrl { get; set; }
 
-
-        //public int SSID { get; set; }
+        [Display(Name = "Status")]
+        public int SSID { get; set; }
     }
 
 
@@ -72,7 +72,7 @@ namespace SAT.DATA.EF
         public string FullName
         {
             get { return FirstName + " " + LastName; }
-            
+
         }
     }
     #endregion
@@ -83,21 +83,20 @@ namespace SAT.DATA.EF
     {
 
         //public int CourseId { get; set; }
-
-        [Required(ErrorMessage = "*")]
         [Display(Name = "Course Name")]
-        [StringLength(50, ErrorMessage ="*Value must be 50 characters or less.")]
+        [Required(ErrorMessage = "*")]
+        [StringLength(50, ErrorMessage = "*Value must be 50 characters or less.")]
         public string CourseName { get; set; }
 
-        [Required(ErrorMessage = "*")]
         [Display(Name = "Description")]
+        [Required(ErrorMessage = "*")]
         [UIHint("MultilineText")]
         public string CourseDescription { get; set; }
 
         [Required(ErrorMessage = "*")]
         [Display(Name = "Credit Hours")]
-        public byte Credithours { get; set; }
-        
+        public byte CreditHours { get; set; }
+
         [StringLength(250, ErrorMessage = "*Value must be 250 characters or less.")]
         public string Curriculum { get; set; }
 
@@ -108,6 +107,9 @@ namespace SAT.DATA.EF
         public bool IsActive { get; set; }
 
     }
+
+    [MetadataType(typeof(CoursesMetadata))]
+    public partial class Courses { }
 
     #endregion
 
@@ -135,6 +137,9 @@ namespace SAT.DATA.EF
 
         //public int SCSID { get; set; }
     }
+
+    [MetadataType(typeof(ScheduledClassesMetadata))]
+    public partial class ScheduledClasses { }
     #endregion
 
     #region StudentStatusesMetadata
@@ -155,6 +160,9 @@ namespace SAT.DATA.EF
     public string SSDescription { get; set; }
 
     }
+
+    [MetadataType(typeof(StudentStatusesMetadata))]
+    public partial class StudentStatuses { }
     #endregion
 
     #region EnrollmentsMetadata
