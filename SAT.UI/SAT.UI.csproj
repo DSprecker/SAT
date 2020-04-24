@@ -492,6 +492,8 @@
     <Content Include="Views\StudentStatuses\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\ContactConfirmation.cshtml" />
+    <Content Include="Views\Courses\ActiveCourses.cshtml" />
+    <Content Include="Views\Courses\RetiredCourses.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

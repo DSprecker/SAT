@@ -67,16 +67,19 @@ namespace SAT.UI.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Students()
         {
             return View();
         }
         [HttpGet]
+        [Authorize(Roles = "Admin, Scheduling")]
         public ActionResult Enrollments()
         {
             return View();
         }
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public ActionResult Courses()
         {
             return View();

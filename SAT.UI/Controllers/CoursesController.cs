@@ -15,12 +15,32 @@ namespace SAT.UI.Controllers
         private SATEntities db = new SATEntities();
 
         // GET: Courses
+        [Authorize(Roles = "Admin")]
         public ActionResult Index()
         {
             return View(db.Courses.ToList());
         }
 
+        [Authorize(Roles = "Admin")]
+        public ActionResult ActiveCourses()
+        {
+            var ac = (from p in db.Courses
+                      where p.IsActive == true
+                      select p);
+            return View(ac.ToList());
+        }
+
+        [Authorize(Roles = "Admin")]
+        public ActionResult RetiredCourses()
+        {
+            var rc = (from p in db.Courses
+                      where p.IsActive == false
+                      select p);
+            return View(rc.ToList());
+        }
+
         // GET: Courses/Details/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +56,7 @@ namespace SAT.UI.Controllers
         }
 
         // GET: Courses/Create
+        [Authorize(Roles = "Admin")]
         public ActionResult Create()
         {
             return View();
@@ -46,6 +67,7 @@ namespace SAT.UI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Create([Bind(Include = "CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Courses courses)
         {
             if (ModelState.IsValid)
@@ -59,6 +81,7 @@ namespace SAT.UI.Controllers
         }
 
         // GET: Courses/Edit/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -78,6 +101,7 @@ namespace SAT.UI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "CourseId,CourseName,CourseDescription,CreditHours,Curriculum,Notes,IsActive")] Courses courses)
         {
             if (ModelState.IsValid)
@@ -90,6 +114,7 @@ namespace SAT.UI.Controllers
         }
 
         // GET: Courses/Delete/5
+        [Authorize(Roles = "Admin")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -105,6 +130,7 @@ namespace SAT.UI.Controllers
         }
 
         // POST: Courses/Delete/5
+        [Authorize(Roles = "Admin")]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
