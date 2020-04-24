@@ -36,3 +36,12 @@
     margin-left: 51%;
     text-align: right;
 }
+
+#dFooterLeft{
+    float:left;
+    width: 49%;
+}
+#dFooterRight {
+    margin-left:50%;
+    text-align:right;
+}

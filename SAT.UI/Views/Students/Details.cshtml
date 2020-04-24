@@ -4,7 +4,7 @@
     ViewBag.Title = "Student Details";
 }
 
-<h2>@ViewBag.Title</h2>
+
 
 <div id="studentDetails">
     <div class="dl-horizontal" id="sHeader">
@@ -12,31 +12,31 @@
         <h2>
             @Html.DisplayFor(model => model.FullName)
         </h2>
-
+    </div>
         <div id="sdLeft">
             <p>
-                @Html.DisplayNameFor(model => model.Major)
+                @Html.DisplayNameFor(model => model.Major):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.Address)
+                @Html.DisplayNameFor(model => model.Address):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.City)
+                @Html.DisplayNameFor(model => model.City):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.State)
+                @Html.DisplayNameFor(model => model.State):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.ZipCode)
+                @Html.DisplayNameFor(model => model.ZipCode):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.Phone)
+                @Html.DisplayNameFor(model => model.Phone):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.Email)
+                @Html.DisplayNameFor(model => model.Email):
             </p>
             <p>
-                @Html.DisplayNameFor(model => model.StudentStatus.SSName)
+                @Html.DisplayNameFor(model => model.StudentStatus.SSName):
             </p>
         </div>
 
@@ -69,45 +69,13 @@
             </p>
         </div>
         <div class="clearfix"></div>
-
-
-
-        @*@Html.DisplayFor(model => model.Major)
-
-
-
-
-
-
-
-
-        @Html.DisplayFor(model => model.Address)
-
-
-
-        @Html.DisplayFor(model => model.City)
-
-
-
-        @Html.DisplayFor(model => model.State)
-
-
-
-        @Html.DisplayFor(model => model.ZipCode)
-
-
-
-        @Html.DisplayFor(model => model.Phone)
-
-
-
-        @Html.DisplayFor(model => model.Email)
-
-
-
-        @Html.DisplayFor(model => model.StudentStatus.SSName)*@
-
-
+        <div id="dFooterRight">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId })
+        </div>
+        <div id="dFooterLeft">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    
 
         @*<dt>
             @Html.DisplayNameFor(model => model.PhotoUrl)
@@ -116,9 +84,6 @@
         @*<dd>
             @Html.DisplayFor(model => model.PhotoUrl)
         </dd>*@
-    </div>
+    
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.StudentId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
