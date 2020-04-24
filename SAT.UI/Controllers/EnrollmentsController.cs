@@ -15,6 +15,7 @@ namespace SAT.UI.Controllers
         private SATEntities db = new SATEntities();
 
         // GET: Enrollments
+        [Authorize(Roles = "Admin, Scheduling")]
         public ActionResult Index()
         {
             var enrollments1 = db.Enrollments1.Include(e => e.ScheduledClass).Include(e => e.Student);
@@ -22,6 +23,7 @@ namespace SAT.UI.Controllers
         }
 
         // GET: Enrollments/Details/5
+        [Authorize(Roles = "Admin, Scheduling")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,10 +39,12 @@ namespace SAT.UI.Controllers
         }
 
         // GET: Enrollments/Create
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Create()
         {
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses1, "ScheduledClassId", "InstructorName");
-            ViewBag.StudentId = new SelectList(db.Students1, "StudentId", "FirstName");
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses1, "ScheduledClassId", "ShortDesc");
+            ViewBag.StudentId = new SelectList(db.Students1, "StudentId", "FullName");
             return View();
         }
 
@@ -49,6 +53,8 @@ namespace SAT.UI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Create([Bind(Include = "EnrollmentId,StudentId,ScheduledClassId,EnrollmentDate")] Enrollments enrollments)
         {
             if (ModelState.IsValid)
@@ -58,12 +64,14 @@ namespace SAT.UI.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses1, "ScheduledClassId", "InstructorName", enrollments.ScheduledClassId);
-            ViewBag.StudentId = new SelectList(db.Students1, "StudentId", "FirstName", enrollments.StudentId);
+            ViewBag.ScheduledClassId = new SelectList(db.ScheduledClasses1, "ScheduledClassId", "ShortDesc", enrollments.ScheduledClassId);
+            ViewBag.StudentId = new SelectList(db.Students1, "StudentId", "FullName", enrollments.StudentId);
             return View(enrollments);
         }
 
         // GET: Enrollments/Edit/5
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +93,8 @@ namespace SAT.UI.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Edit([Bind(Include = "EnrollmentId,StudentId,ScheduledClassId,EnrollmentDate")] Enrollments enrollments)
         {
             if (ModelState.IsValid)
@@ -99,6 +109,8 @@ namespace SAT.UI.Controllers
         }
 
         // GET: Enrollments/Delete/5
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,6 +128,8 @@ namespace SAT.UI.Controllers
         // POST: Enrollments/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Admin, Scheduling")]
+
         public ActionResult DeleteConfirmed(int id)
         {
             Enrollments enrollments = db.Enrollments1.Find(id);

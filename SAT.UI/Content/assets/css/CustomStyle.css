@@ -45,3 +45,11 @@
     margin-left:50%;
     text-align:right;
 }
+
+.username{
+    margin-top:0;
+}
+
+.menu-active {
+    color: red;
+}

@@ -68,7 +68,7 @@ namespace SAT.DATA.EF
     [MetadataType(typeof(StudentsMetadata))]
     public partial class Students
     {
-        [Display(Name = "Full Name")]
+        [Display(Name = "Student Name")]
         public string FullName
         {
             get { return FirstName + " " + LastName; }
@@ -103,7 +103,7 @@ namespace SAT.DATA.EF
         [UIHint("MultlineText")]
         public string Notes { get; set; }
 
-        [Display(Name = "Active?")]
+        [Display(Name = "Active Status:")]
         public bool IsActive { get; set; }
 
     }
@@ -139,7 +139,15 @@ namespace SAT.DATA.EF
     }
 
     [MetadataType(typeof(ScheduledClassesMetadata))]
-    public partial class ScheduledClasses { }
+    public partial class ScheduledClasses {
+        [Display(Name = "Course Description")]
+        public string ShortDesc
+       {
+           
+           get { return InstructorName + " - " +  Location + " - " + Courses.CourseName; }
+
+        }
+    }
     #endregion
 
     #region StudentStatusesMetadata
@@ -167,19 +175,26 @@ namespace SAT.DATA.EF
 
     #region EnrollmentsMetadata
 
-    //public class EnrollmentsMetaData
-    //{
-    //    //public int EnrollmentId { get; set; }
+    public class EnrollmentsMetaData
+    {
 
 
-    //    //public int StudentId { get; set; }
+        //public int EnrollmentId { get; set; }
+
+        [Display(Name = "Student Name")]
+        public int StudentId { get; set; }
+
+        [Display(Name = "Class Description")]
+        public int ScheduledClassId { get; set; }
 
 
-    //    //public int ScheduledClassId { get; set; }
+        public System.DateTime EnrollmentDate { get; set; }
 
+    }
+    [MetadataType(typeof(EnrollmentsMetadata))]
+    public partial class EnrollmentsMetadata
+    {
 
-    //    public System.DateTime EnrollmentDate { get; set; }
-
-    //} 
+    }
     #endregion
 }
